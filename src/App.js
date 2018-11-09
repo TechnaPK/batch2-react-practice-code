@@ -1,30 +1,18 @@
 import React, { Component } from 'react';
+import Header from './components/Header'
+import Content from './components/Content'
+import Footer from './components/Footer'
 import './App.css';
 
 class App extends Component {
 
   render() {
 
-    // let number = 5;
-    // const name = "My name is Umar";
-
-    let names = ["Umar", "Umar", "Ahmad", "Ali"]
-
     return (
       <div>
-        <div style={{ backgroundColor: "red", fontSize: "60px" }} >{ 2 + 2 }</div>
-        <ul className="mylist">
-
-          <li> {names[2]}</li>
-
-          
-          {names.map(function(value, index){
-
-            return <li key={index}>{index}) {value}</li>
-
-          })}
-
-        </ul>
+        <Header />
+        <Content />
+        <Footer />
       </div>
     );
 
