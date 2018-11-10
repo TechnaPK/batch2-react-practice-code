@@ -1,7 +1,40 @@
 body{
   background: #ddd;
+  margin: 0;
+  padding: 0;
 }
-.mylist{
-  background: orange;
-  color: white
+.header{
+  background: red;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+.header h1{
+  margin: 0;
+}
+
+.contentArea{
+  max-width: 980px;
+  margin: 0 auto 40px;
+  overflow: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.leftPane{
+  float: left;
+  width: 65%;
+}
+
+.rightPane{
+  float: right;
+  width: 30%;
+
+}
+
+.leftPane, .rightPane{
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid #666;
+  min-height: 250px;
 }

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import LeftPane from './LeftPane'
+import RightPane from './RightPane'
 
 class Content extends Component {
 
@@ -9,40 +11,35 @@ class Content extends Component {
   }
 
 
-  handleClick = () => {
 
-    if (this.state.displayMenu === true) {
-      this.setState({ displayMenu: false })
+  updateSelection = (value, index) => {
 
-    } else {
-      this.setState({ displayMenu: true })
-
-    }
+    this.setState({ selectedFood: value })
 
   }
 
-  updateSelection = ( value, index ) => {
-    console.log( index )
-    this.setState({ selectedFood: value })
+  handleSubmit = () => {
+    
+    let menu_item = this.refs.menu_item.value
+    let menuItems = this.state.menu.slice()
+
+    menuItems.push( menu_item )
+
+    this.setState({ menu: menuItems })
   }
 
   render() {
 
-    const menuItems = this.state.menu.map((value, index) => {
-      
-      return <li key={index} onClick={() => { this.setState({ selectedFood: value }) }} >  {value}  </li>
-
-    })
-
     return (
-      <div>
-        <button onClick={this.handleClick}>Toggle Menu</button>
-        <h2>Menu:</h2>
-        <h2>Selected Food: {this.state.selectedFood}</h2>
-        <ul>
-          {this.state.displayMenu === true ? menuItems : ''}
+      <div className="contentArea">
+        <div>
 
-        </ul>
+          < input type="text" ref="menu_item" />
+          <input type="submit" value="submit" onClick={this.handleSubmit} />
+        </div>
+
+        <LeftPane menu={this.state.menu} updateSelection={this.updateSelection} />
+        <RightPane selectedFood={this.state.selectedFood} />
 
       </div>
     )
