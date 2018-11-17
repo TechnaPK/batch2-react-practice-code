@@ -5,11 +5,14 @@ import Footer from './components/Footer'
 import './App.css';
 
 class App extends Component {
-
+ state={
+   
+ }
   render() {
     
     return (
-      <div>
+      <div className="App">
+      <div></div>
         <Header />
         <Content />
         <Footer />

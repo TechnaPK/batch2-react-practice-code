@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LeftPane from './LeftPane'
 import RightPane from './RightPane'
+import Test from './Test'
 
 class Content extends Component {
 
@@ -9,8 +10,6 @@ class Content extends Component {
     selectedFood: 'Nothing',
     menu: ["Biryani", "Qourma", "Ice Cream", "Bottles"]
   }
-
-
 
   updateSelection = (value, index) => {
 
@@ -32,10 +31,14 @@ class Content extends Component {
 
     return (
       <div className="contentArea">
-        <div>
 
-          < input type="text" ref="menu_item" />
-          <input type="submit" value="submit" onClick={this.handleSubmit} />
+        <Test />
+
+        <div style={{textAlign: 'center', margin: '20px 0'}}>
+
+          <input type="text" ref="menu_item" placeholder="Enter Item Name" />
+          <input type="submit" value="Add" onClick={this.handleSubmit} />
+
         </div>
 
         <LeftPane menu={this.state.menu} updateSelection={this.updateSelection} />

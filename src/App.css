@@ -38,3 +38,10 @@ body{
   border: 1px solid #666;
   min-height: 250px;
 }
+
+.testComponent{
+  background: #fff;
+  text-align: center;
+  color: orange;
+  padding: 20px
+}
