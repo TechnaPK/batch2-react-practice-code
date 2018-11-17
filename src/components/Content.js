@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LeftPane from './LeftPane'
 import RightPane from './RightPane'
-import Test from './Test'
+// import Test from './Test'
 
 class Content extends Component {
 
@@ -32,7 +32,7 @@ class Content extends Component {
     return (
       <div className="contentArea">
 
-        <Test />
+        {/* <Test abc="Umar" /> */}
 
         <div style={{textAlign: 'center', margin: '20px 0'}}>
 

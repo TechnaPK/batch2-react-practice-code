@@ -5,10 +5,13 @@ class Test extends Component {
   constructor(props){
     super(props)
     console.log( "constructor method is invoked" )
+
+    console.log(this.props)
   }
 
   componentDidMount(){
     console.log( "componentDidMount method is invoked" )
+    console.log(this.props)
   }
 
   componentDidUpdate(){
