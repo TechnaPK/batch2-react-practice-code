@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
+import {addItem, removeItem } from '../actions/menus-actions'
+
 class Content extends Component {
 
   handleSubmit = () => {
 
     let menu_item = this.refs.menu_item.value
+    
+    this.props.dispatch( addItem( menu_item ) )
 
-    let action = { type: "ADD_ITEM", payload: menu_item }
-    this.props.dispatch( action )
+  }
 
-    // this.props.dispatch( { type: "ADD_MENU_ITEM", data: menu_item } )
+  handleRemove = () => {
+
+    let menu_item = this.refs.menu_item.value
+    this.props.dispatch( removeItem( menu_item ) )
 
   }
 
@@ -25,6 +31,7 @@ class Content extends Component {
 
           <input type="text" ref="menu_item" placeholder="Enter Item Name" />
           <input type="submit" value="Add" onClick={this.handleSubmit} />
+          <input type="submit" value="Remove" onClick={this.handleRemove} />
 
         </div>
 

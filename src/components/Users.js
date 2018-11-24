@@ -5,7 +5,11 @@ class Users extends Component {
 
   handleSubmit = () => {
 
-    // let user_name = this.refs.user_name.value
+    let user_name = this.refs.user_name.value
+
+    let action = { type: "ADD_USER", payload: user_name }
+    this.props.dispatch( action )
+
   }
 
   render() {
