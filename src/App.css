@@ -24,6 +24,11 @@ body{
   box-sizing: border-box;
 }
 
+.listArea{
+  border: 1px solid #666;
+  padding: 20px;
+}
+
 .leftPane{
   float: left;
   width: 65%;

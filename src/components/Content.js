@@ -1,48 +1,42 @@
 import React, { Component } from 'react';
-import LeftPane from './LeftPane'
-import RightPane from './RightPane'
-// import Test from './Test'
+import { connect } from 'react-redux'
 
 class Content extends Component {
 
-  state = {
-    displayMenu: true,
-    selectedFood: 'Nothing',
-    menu: ["Biryani", "Qourma", "Ice Cream", "Bottles"]
-  }
-
-  updateSelection = (value, index) => {
-
-    this.setState({ selectedFood: value })
-
-  }
-
   handleSubmit = () => {
-    
+
     let menu_item = this.refs.menu_item.value
-    let menuItems = this.state.menu.slice()
 
-    menuItems.push( menu_item )
+    let action = { type: "ADD_ITEM", payload: menu_item }
+    this.props.dispatch( action )
 
-    this.setState({ menu: menuItems })
+    // this.props.dispatch( { type: "ADD_MENU_ITEM", data: menu_item } )
+
   }
 
   render() {
 
+    console.log( this.props )
+
     return (
       <div className="contentArea">
 
-        {/* <Test abc="Umar" /> */}
-
-        <div style={{textAlign: 'center', margin: '20px 0'}}>
+        <div style={{ textAlign: 'center', margin: '20px 0' }}>
 
           <input type="text" ref="menu_item" placeholder="Enter Item Name" />
           <input type="submit" value="Add" onClick={this.handleSubmit} />
 
         </div>
 
-        <LeftPane menu={this.state.menu} updateSelection={this.updateSelection} />
-        <RightPane selectedFood={this.state.selectedFood} />
+        <div className="listArea">
+
+          <h2>Menus:</h2>
+          {this.props.menu.map((value, index) => {
+            return <li key={index}>{value}</li>
+          })}
+
+        </div>
+
 
       </div>
     )
@@ -50,4 +44,28 @@ class Content extends Component {
   }
 
 }
-export default Content
+
+const mapStateToProps = (store) =>{
+  return {
+    menu: store.menusReducer,
+    users: store.usersReducer
+  }
+}
+
+
+export default connect( mapStateToProps )( Content )
+
+
+
+
+
+
+
+
+
+
+// const mapStateToProps = (store) => {
+//   return {
+//     menu: store.menusReducer
+//   }
+// }
