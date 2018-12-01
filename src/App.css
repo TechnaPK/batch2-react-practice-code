@@ -24,9 +24,20 @@ body{
   box-sizing: border-box;
 }
 
-.listArea{
+.listArea, .userDetails{
   border: 1px solid #666;
   padding: 20px;
+  margin-bottom: 10px;
+}
+
+.listItem{
+  border: 1px solid #999;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.listItem li{
+  list-style: none;
 }
 
 .leftPane{

@@ -7,4 +7,6 @@ const allReducers = combineReducers({ menusReducer, usersReducer })
 
 let store = createStore(allReducers);
 
+window.store = store
+
 export default store

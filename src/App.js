@@ -23,13 +23,16 @@ class App extends Component {
             <Header />
 
             <Switch>
+
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
+              
               <Route path="/users" component={Users} />
+
               <Route exact path="/" component={Home} />
               <Route path="/" component={Home} />
-            </Switch>
 
+            </Switch>
             <Footer />
           </div>
         </BrowserRouter>
