@@ -6,7 +6,7 @@ class UserDetails extends Component {
   render() {
     // console.log( this.props )
     // console.log( this.props.match.params.id )
-    // console.log( this.props.match.params.firstName)
+    // console.log( this.props.match.params.email)
 
     return (
       <div className="userDetails">

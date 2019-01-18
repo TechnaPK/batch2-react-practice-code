@@ -12,12 +12,14 @@ class Users extends Component {
     const {users} = this.props
 
     const usersList = users.map((user, index) => {
-      return <div key={index} className="listItem">
+      return <div key={user.id} className="listItem">
 
         <li>ID: {user.id}</li>
-        <li>First Name: {user.first_name}</li>
+        <li>Name: {user.name}</li>
+        <li>Email: {user.email}</li>
+        <li>Balance: {user.balance}</li>
 
-        <Link to={ "/users/details/" + user.id+ "/" + user.first_name}>Go To Details</Link>
+        <Link to={ "/users/details/" + user.id+ "/" + user.email}>Go To Details</Link>
 
       </div>
     })
@@ -28,7 +30,7 @@ class Users extends Component {
         <Link to="/users/add">Add User</Link>
 
         <Route path="/users/add" component={AddUser} />
-        <Route path="/users/details/:id/:firstName" component={UserDetails} />
+        <Route path="/users/details/:id/:email" component={UserDetails} />
 
         <div className="listArea">
 
@@ -51,10 +53,3 @@ const mapStateToProps = (store) => {
 }
 
 export default connect(mapStateToProps)(Users)
-
-
-
-
-
-  // <Route path = "/users/add" component = { AddUser } />
-  // <Route path="/users/details/:id" component={UserDetails} />

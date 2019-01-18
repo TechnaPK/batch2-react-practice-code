@@ -7,10 +7,11 @@ class AddUser extends Component {
   handleSubmit = () => {
 
     let user_id = Math.random().toString().slice(2)
-    let first_name = this.refs.first_name.value
-    let last_Name = this.refs.last_Name.value
+    let name = this.refs.name.value
+    let email = this.refs.email.value
+    let balance = this.refs.balance.value
 
-    let user = { id: user_id, first_name: first_name, last_Name: last_Name  }
+    let user = { id: user_id, name: name, email: email, balance: balance  }
 
     this.props.dispatch( addUser(user) )
 
@@ -21,8 +22,9 @@ class AddUser extends Component {
     return (
       <div style={{ textAlign: 'center', margin: '20px 0' }}>
 
-        <input type="text" ref="first_name" placeholder="Enter First Name" />
-        <input type="text" ref="last_Name" placeholder="Enter Last Name" />
+        <input type="text" ref="name" placeholder="Full Name" />
+        <input type="text" ref="email" placeholder="Email" />
+        <input type="text" ref="balance" placeholder="Balance" />
         <input type="submit" value="Add" onClick={this.handleSubmit} />
 
       </div>

@@ -7,8 +7,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Users from './components/Users';
-
+import Users from './components/Users'
 import { Provider } from 'react-redux'
 import store from './redux'
 
@@ -30,6 +29,7 @@ class App extends Component {
               <Route path="/users" component={Users} />
 
               <Route exact path="/" component={Home} />
+			  
               <Route path="/" component={Home} />
 
             </Switch>
