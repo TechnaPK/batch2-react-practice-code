@@ -1,5 +1,10 @@
+const setUsers = ( users ) => {
+    return { type: "SET_USERS", payload: users }
+}
+
+
 const addUser = ( user ) => {
     return { type: "ADD_USER", payload: user }
 }
 
-export { addUser }
+export { setUsers, addUser }
